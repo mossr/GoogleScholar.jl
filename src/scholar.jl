@@ -14,10 +14,10 @@ end
 
 url(scholar::Scholar) = "https://scholar.google.com/citations?hl=en&user=$(scholar.user)&pagesize=100&view_op=list_works"
 
-function get_html_element(element_tag, element_start_regex, element_end_regex, body; return_content=false, isnested=false)
+function get_html_element(element_tag, element_start_regex, element_end_regex, body; return_content=false, isnested=false, verbose=false)
     m = match(element_start_regex, body)
     if isnothing(m)
-        @info "No HTML element that starts with: $(element_start_regex.pattern)"
+        verbose && @info "No HTML element that starts with: $(element_start_regex.pattern)"
         return return_content ? (nothing, nothing) : nothing
     end
 
