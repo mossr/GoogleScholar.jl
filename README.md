@@ -1,6 +1,6 @@
 # GoogleScholar.jl
 
-A light-weight package to read and plot [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Robert+J.+Moss&btnG=) citation information.
+A light-weight Julia package to read and plot [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Robert+J.+Moss&btnG=) citation information.
 
 ## Installation
 
