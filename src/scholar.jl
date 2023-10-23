@@ -6,6 +6,12 @@ Base.@kwdef mutable struct Scholar
     total = 0
 end
 
+function Scholar(user::String)
+    scholar = Scholar(user=user)
+    get_citation_history!(user)
+    return scholar
+end
+
 url(scholar::Scholar) = "https://scholar.google.com/citations?hl=en&user=$(scholar.user)&pagesize=100&view_op=list_works"
 
 function get_html_element(element_tag, element_start_regex, element_end_regex, body; return_content=false, isnested=false)

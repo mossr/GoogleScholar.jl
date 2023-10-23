@@ -14,7 +14,6 @@ A light-weight Julia package to read and plot [Google Scholar](https://scholar.g
 using GoogleScholar
 
 scholar = Scholar(user="OdCpu9sAAAAJ") # Robert J. Moss
-get_citation_history!(scholar)
 
 plot_citations(scholar)
 bettersavefig("google-scholar-citations.png"; dpi=300) # higher resolution
