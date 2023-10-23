@@ -8,7 +8,7 @@ end
 
 function Scholar(user::String)
     scholar = Scholar(user=user)
-    get_citation_history!(user)
+    get_citation_history!(scholar)
     return scholar
 end
 
