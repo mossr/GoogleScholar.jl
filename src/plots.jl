@@ -1,8 +1,9 @@
+plotlyjs()
+
 default(
     fontfamily="Palatino Roman",
     framestyle=:axes,
     legend=:bottomright,
-    # legend_font_halign=:left,
     size=(500, 250),
     topmargin=5Plots.mm,
     bottommargin=5Plots.mm,
@@ -20,7 +21,7 @@ default(
 )
 
 function plot_citations(scholar::Scholar; color="#777777")
-    bar(scholar.years, scholar.citations_per_year;
+    Plots.bar(scholar.years, scholar.citations_per_year;
         bar_width=0.4,
         color,
         linecolor=nothing,

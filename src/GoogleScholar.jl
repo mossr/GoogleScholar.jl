@@ -2,6 +2,7 @@ module GoogleScholar
 
 using HTTP
 using Plots
+using PlotlyJS
 
 export
     Scholar,
