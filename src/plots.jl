@@ -1,35 +1,36 @@
-default(
-    fontfamily="Palatino Roman",
-    framestyle=:axes,
-    legend=:bottomright,
-    linewidth=2,
-    titlefont=15,
-    legendfontsize=14,
-    guidefontsize=14,
-    tickfontsize=8,
-    colorbartickfontsizes=14,
-    xgrid=false,
-    ygrid=true,
-    widen=false,
-)
-
 function plot_citations(scholar::Scholar; color="#777777", use_plotly=false)
+    plt = Plots.plot(
+        fontfamily="Palatino Roman",
+        framestyle=:axes,
+        legend=:bottomright,
+        linewidth=2,
+        titlefont=15,
+        legendfontsize=14,
+        guidefontsize=14,
+        tickfontsize=8,
+        colorbartickfontsizes=14,
+        xgrid=false,
+        ygrid=true,
+        widen=false,
+    )
     if use_plotly
         plotlyjs()
-        plt = Plots.plot(
+        Plots.plot!(plt,
             topmargin=5Plots.mm,
             bottommargin=5Plots.mm,
             leftmargin=0Plots.mm,
             rightmargin=12Plots.mm,
+            x_foreground_color_axis=color,
             size=(600, 150),
         )
     else
         gr()
-        plt = Plots.plot(
+        Plots.plot!(plt,
             topmargin=5Plots.mm,
             bottommargin=5Plots.mm,
             leftmargin=5Plots.mm,
             rightmargin=5Plots.mm,
+            x_foreground_color_axis=:white,
             size=(500, 250),
         )
     end
@@ -45,7 +46,6 @@ function plot_citations(scholar::Scholar; color="#777777", use_plotly=false)
         y_foreground_color_text=color,
         y_guidefontcolor=color,
         x_foreground_color_border=:white,
-        x_foreground_color_axis=color,
         x_foreground_color_text=color,
         x_guidefontcolor=color,
         ymirror=true,
